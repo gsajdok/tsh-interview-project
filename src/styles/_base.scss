@@ -1,1 +1,16 @@
-@import-normalize;
+$white: #FFFFFF;
+$gray-1: #F0F1F5;
+$gray-2: #E0E2EA;
+$gray-3: #B9BDCF;
+$gray-4: #9194A5;
+$black: #1A1B1D;
+$blue-1: #4460F7;
+$blue-2: #2140E8;
+$gold: #F9A52B;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap'); //Nunito font
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+}
