@@ -102,7 +102,7 @@ export const Products = () => {
         <section className="products">
             <div className="products__wrapper">
                 <div className="products__list">
-                    {MOCKITEMS.map(mockitem => <Product item={mockitem}/>)}
+                    {MOCKITEMS.map(mockitem => <Product key={mockitem.id} item={mockitem}/>)}
                 </div>
                 <div className="products__pages">
                     <a href="">First</a>

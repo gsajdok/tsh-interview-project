@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import {AppRoute} from "../../routing/AppRoute.enum";
 import React from "react";
+import Lens from '../../assets/icons/Lens.svg'
 
 export const Header = () => {
     return (
@@ -12,7 +13,7 @@ export const Header = () => {
             </div>
             <div className="searchBox">
                 <input type="text" id="searchBox" className="searchInput" placeholder="Search"/>
-                <button className="searchInput__button">S</button>
+                <button className="searchInput__button"><img src={Lens}/></button>
             </div>
             <div className="filters">
                 <div className="filters__checkbox__active">
