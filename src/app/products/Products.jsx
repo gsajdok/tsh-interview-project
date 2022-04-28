@@ -1,5 +1,99 @@
 import React from 'react';
 import {Header} from "./Header";
+import {Product} from "./Product";
+
+const MOCKITEMS = [
+        {
+            "id": 1,
+            "name": "Incredible Plastic Pizza",
+            "description": "Molestiae iure eum voluptas culpa et ut quasi.",
+            "rating": 2,
+            "image": "https://picsum.photos/640/480?random=1074",
+            "promo": true,
+            "active": true
+        },
+        {
+            "id": 2,
+            "name": "Licensed Cotton Soap",
+            "description": "Commodi repellat illo facilis.",
+            "rating": 2,
+            "image": "https://picsum.photos/640/480?random=5623",
+            "promo": true,
+            "active": false
+        },
+        {
+            "id": 3,
+            "name": "Tasty Rubber Car",
+            "description": "Explicabo accusamus optio facilis nobis officiis sed nisi omnis quia.",
+            "rating": 5,
+            "image": "https://picsum.photos/640/480?random=2281",
+            "promo": true,
+            "active": true
+        },
+        {
+            "id": 4,
+            "name": "Generic Metal Shirt",
+            "description": "Molestias atque repudiandae hic consequuntur voluptatem repellat magni.",
+            "rating": 4,
+            "image": "https://picsum.photos/640/480?random=1573",
+            "promo": false,
+            "active": false
+        },
+        {
+            "id": 5,
+            "name": "Fantastic Fresh Ball",
+            "description": "Aliquam delectus sapiente est cumque odio veniam reiciendis voluptatem distinctio.",
+            "rating": 1,
+            "image": "https://picsum.photos/640/480?random=5147",
+            "promo": true,
+            "active": true
+        },
+        {
+            "id": 6,
+            "name": "Awesome Fresh Gloves",
+            "description": "Ut dicta et minima.",
+            "rating": 1,
+            "image": "https://picsum.photos/640/480?random=7135",
+            "promo": true,
+            "active": false
+        },
+        {
+            "id": 7,
+            "name": "Unbranded Concrete Sausages",
+            "description": "Voluptatibus maxime odit fugit quo qui maxime.",
+            "rating": 1,
+            "image": "https://picsum.photos/640/480?random=2664",
+            "promo": true,
+            "active": false
+        },
+        {
+            "id": 8,
+            "name": "Small Wooden Gloves",
+            "description": "At facere non nisi autem.",
+            "rating": 1,
+            "image": "https://picsum.photos/640/480?random=3559",
+            "promo": false,
+            "active": true
+        },
+        {
+            "id": 9,
+            "name": "Practical Concrete Mouse",
+            "description": "Nulla dolor et at cumque perferendis dignissimos omnis.",
+            "rating": 3,
+            "image": "https://picsum.photos/640/480?random=3772",
+            "promo": false,
+            "active": true
+        },
+        {
+            "id": 10,
+            "name": "Licensed Plastic Bike",
+            "description": "Delectus asperiores debitis culpa.",
+            "rating": 4,
+            "image": "https://picsum.photos/640/480?random=8090",
+            "promo": false,
+            "active": false
+        }
+        ];
 
 export const Products = () => {
   return (
@@ -8,71 +102,7 @@ export const Products = () => {
         <section className="products">
             <div className="products__wrapper">
                 <div className="products__list">
-                    <div className="product">
-                        <div className="product__image">
-                            <img src="https://picsum.photos/640/480?random=1074" alt=""/>
-                            <div className="product__image__promo"><span>Promo</span></div>
-                        </div>
-                        <div className="product__text">
-                            <div className="product__title"><h2>White Watch</h2></div>
-                            <div className="product__description"><p>How To Protect Your Computer Very Useful Tips</p>
-                            </div>
-                            <div className="product__rating">S S N N N</div>
-                            <div className="product__details"><a href="">Show Details</a></div>
-                        </div>
-                    </div>
-                    <div className="product">
-                        <div className="product__image">
-                            <img src="https://picsum.photos/640/480?random=1074" alt=""/>
-                            <div className="product__image__promo"><span>Promo</span></div>
-                        </div>
-                        <div className="product__text">
-                            <div className="product__title"><h2>White Watch</h2></div>
-                            <div className="product__description"><p>How To Protect Your Computer Very Useful Tips</p>
-                            </div>
-                            <div className="product__rating">S S N N N</div>
-                            <div className="product__details"><a href="">Show Details</a></div>
-                        </div>
-                    </div>
-                    <div className="product">
-                        <div className="product__image">
-                            <img src="https://picsum.photos/640/480?random=1074" alt=""/>
-                            <div className="product__image__promo"><span>Promo</span></div>
-                        </div>
-                        <div className="product__text">
-                            <div className="product__title"><h2>White Watch</h2></div>
-                            <div className="product__description"><p>How To Protect Your Computer Very Useful Tips</p>
-                            </div>
-                            <div className="product__rating">S S N N N</div>
-                            <div className="product__details"><a href="">Show Details</a></div>
-                        </div>
-                    </div>
-                    <div className="product">
-                        <div className="product__image">
-                            <img src="https://picsum.photos/640/480?random=1074" alt=""/>
-                            <div className="product__image__promo"><span>Promo</span></div>
-                        </div>
-                        <div className="product__text">
-                            <div className="product__title"><h2>White Watch</h2></div>
-                            <div className="product__description"><p>How To Protect Your Computer Very Useful Tips</p>
-                            </div>
-                            <div className="product__rating">S S N N N</div>
-                            <div className="product__details"><a href="">Show Details</a></div>
-                        </div>
-                    </div>
-                    <div className="product">
-                        <div className="product__image">
-                            <img src="https://picsum.photos/640/480?random=1074" alt=""/>
-                            <div className="product__image__promo"><span>Promo</span></div>
-                        </div>
-                        <div className="product__text">
-                            <div className="product__title"><h2>White Watch</h2></div>
-                            <div className="product__description"><p>How To Protect Your Computer Very Useful Tips</p>
-                            </div>
-                            <div className="product__rating">S S N N N</div>
-                            <div className="product__details"><a href="">Show Details</a></div>
-                        </div>
-                    </div>
+                    {MOCKITEMS.map(mockitem => <Product item={mockitem}/>)}
                 </div>
                 <div className="products__pages">
                     <a href="">First</a>
