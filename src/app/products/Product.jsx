@@ -11,7 +11,10 @@ export const Product = ({item}) => {
                 <div className="product__title"><h2>{item.name}</h2></div>
                 <div className="product__description"><p>{item.description}</p>
                 </div>
-                <div className="product__rating">{item.rating}</div>
+                <div className="product__rating">
+                    {Array.from({ length: item.rating }, (e, i) => <span key={i}>Star</span>)}
+                    {item.rating<5 && Array.from({ length: 5-item.rating }, (e, i) => <span key={item.rating+i}>B</span>)}
+                </div>
                 <div className="product__details"><a href="" className="button button--filled" disabled={!item.active}>Show Details</a></div>
             </div>
         </div>
