@@ -2,25 +2,19 @@ import React, {useEffect, useState} from 'react';
 import {Header} from "./Header";
 import {Product} from "./Product";
 import {Empty} from "./Empty";
+import {fetchData} from "../../utilities/api";
 
 export const Products = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setLoaded] = useState(false);
     const [products, setProducts] = useState([]);
 
+    const parameters = {limit: 2, page: 5, search: "Practical"};
+    //{search: "text", limit: 1, page: 1, promo: true, active: true}
+
+
     useEffect(() => {
-        fetch("https://join-tsh-api-staging.herokuapp.com/products?search=wawawa&limit=5&page=2")
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    setLoaded(true);
-                    setProducts(data);
-                },
-                (error) => {
-                    setLoaded(true);
-                    setError(error);
-                }
-            )
+        fetchData(setLoaded, setProducts, setError, parameters);
     }, [])
 
     if (error) {
