@@ -8,12 +8,13 @@ export const Products = () => {
     <>
         <header>
             <div className="header__wrapper">
-                <div className="logo">join.tsh.io</div>
+                <div className="logo"><h1>join.tsh.io</h1></div>
                 <div className="account">
                     <Link to={AppRoute.login}>Log in</Link>
                 </div>
                 <div className="searchBox">
                     <input type="text" id="searchBox"/>
+                    <button className="searchBox__button">S</button>
                 </div>
                 <div className="filters">
                     <div className="filters__checkbox__active">
