@@ -67,9 +67,14 @@
   .searchInput__button {
     position: absolute;
     right: 1rem;
+    top: 0;
     background-color: transparent;
     border: none;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
 }
 
