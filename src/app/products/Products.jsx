@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Header} from "./Header";
 import {Product} from "./Product";
+import {Empty} from "./Empty";
 
 export const Products = () => {
     const [error, setError] = useState(null);
@@ -8,7 +9,7 @@ export const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://join-tsh-api-staging.herokuapp.com/products?limit=5&page=1")
+        fetch("https://join-tsh-api-staging.herokuapp.com/products?search=wawawa&limit=5&page=2")
             .then(res => res.json())
             .then(
                 (data) => {
@@ -43,7 +44,7 @@ export const Products = () => {
                 <section className="products">
                     <div className="products__wrapper">
                         <div className="products__list">
-                            {products.items.map(item => <Product key={item.id} item={item}/>)}
+                            {products.meta.totalItems===0 ? <Empty/> : products.items.map(item => <Product key={item.id} item={item}/>)}
                         </div>
                         <div className="products__pages">
                             <a href="">First</a>

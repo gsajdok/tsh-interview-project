@@ -76,10 +76,10 @@
 .product {
   display: flex;
   flex-direction: column;
-  max-height: 25rem;
+  height: 25rem;
   background-color: $white;
   border-radius: 0.5rem;
-  max-width: 20rem;
+  width: 20rem;
   overflow: hidden;
 
   .product__image {
@@ -114,6 +114,12 @@
     flex-direction: column;
     flex: 1;
     padding: 1rem;
+
+    &.product__text--centered {
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
     .product__title {
 
