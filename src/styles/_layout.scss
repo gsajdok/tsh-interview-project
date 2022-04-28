@@ -14,49 +14,8 @@ header {
     padding: 3.25rem 1.5rem 2rem;
     row-gap: 1.5rem;
 
-    .logo {
-
-      h1 {
-        font-family: 'Nunito', sans-serif;
-        font-weight: 600;
-        font-size: 1.5rem;
-        line-height: 2.5rem;
-        color: $black;
-        margin: 0;
-      } //h1
-    } //.logo
-
-    .account {
-
-      a {
-        display: block;
-        font-size: 0.875rem;
-        line-height: 1rem;
-        color: $blue-1;
-        background-color: $white;
-        border: 1px solid $blue-1;
-        border-radius: 0.25rem;
-        padding: 0.6875rem 1.5rem;
-        text-decoration: none;
-      }
-    } //.account
-
     .searchBox {
       flex: 0 0 100%;
-      position: relative;
-
-      input {
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      .searchBox__button {
-        position: absolute;
-        right: 0;
-        background-color: transparent;
-        border: none;
-        height: 100%;
-      }
     } //.searchBox
 
     .filters {
