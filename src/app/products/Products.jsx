@@ -32,14 +32,28 @@ export const Products = () => {
     if (error) {
         return (
             <>
-                <Header/>
+                <Header
+                    setSearchQuery={setSearchQuery}
+                    setActiveCheck={setActiveCheck}
+                    setPromoCheck={setPromoCheck}
+                    activeCheck={activeCheck}
+                    promoCheck={promoCheck}
+                    setCurrentPage={setCurrentPage}
+                />
                 <div>Error</div>
             </>
         )
     } else if (!isLoaded || products.length===0) {
         return (
             <>
-                <Header/>
+                <Header
+                    setSearchQuery={setSearchQuery}
+                    setActiveCheck={setActiveCheck}
+                    setPromoCheck={setPromoCheck}
+                    activeCheck={activeCheck}
+                    promoCheck={promoCheck}
+                    setCurrentPage={setCurrentPage}
+                />
                 <div>Loading</div>
             </>
         )
