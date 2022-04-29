@@ -67,19 +67,24 @@
   .searchInput__button {
     position: absolute;
     right: 1rem;
+    top: 0;
     background-color: transparent;
     border: none;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
 }
 
 .product {
   display: flex;
   flex-direction: column;
-  max-height: 25rem;
+  height: 25rem;
   background-color: $white;
   border-radius: 0.5rem;
-  max-width: 20rem;
+  width: 20rem;
   overflow: hidden;
 
   .product__image {
@@ -115,6 +120,12 @@
     flex: 1;
     padding: 1rem;
 
+    &.product__text--centered {
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
     .product__title {
 
       h2 {
@@ -144,9 +155,35 @@
           color: $gray-3;
         }
       }
-
-
     } //.product__rating
 
   } //.product__text
 } //.product
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  .pagination__link {
+    cursor: pointer;
+    text-decoration: none;
+
+    &.pagination__link--active {
+      color: $blue-1;
+    }
+
+    &.pagination__link--disabled, &[disabled] {
+      color: $gray-4;
+      cursor: default;
+    }
+  }
+
+  .pagination__digits {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
