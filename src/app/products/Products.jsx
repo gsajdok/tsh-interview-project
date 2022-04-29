@@ -4,6 +4,7 @@ import {Product} from "./Product";
 import {Empty} from "./Empty";
 import {fetchData} from "../../utilities/api";
 import {Pagination} from "./Pagination";
+import {Modal} from "./Modal";
 
 export const Products = () => {
     const [error, setError] = useState(null);
