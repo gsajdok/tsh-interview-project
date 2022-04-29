@@ -5,7 +5,7 @@ export const Empty = () => {
         <section className="products">
             <div className="products__wrapper">
                 <div className="products__list">
-                    <div className="product">
+                    <div className="product product--empty">
                         <div className="product__text product__text--centered">
                             <Bag/>
                             <div className="product__title">
