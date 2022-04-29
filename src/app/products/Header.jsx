@@ -3,11 +3,12 @@ import {AppRoute} from "../../routing/AppRoute.enum";
 import React, {useState} from "react";
 import {ReactComponent as Lens} from '../../assets/icons/Lens.svg'
 
-export const Header = ({setSearchQuery, setActiveCheck, setPromoCheck, activeCheck, promoCheck}) => {
+export const Header = ({setSearchQuery, setActiveCheck, setPromoCheck, activeCheck, promoCheck, setCurrentPage}) => {
     const [searchInput, setSearchInput] = useState("");
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        setCurrentPage(1);
         setSearchQuery(searchInput);
     }
 
