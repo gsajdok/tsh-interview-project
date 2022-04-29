@@ -14,7 +14,7 @@ export const Products = () => {
     const [promoCheck, setPromoCheck] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
 
-    let parameters = {limit: 20, page: 1};
+    let parameters = {limit: 10, page: 1};
     //{search: "text", limit: 1, page: 1, promo: true, active: true}
 
     useEffect(() => {
