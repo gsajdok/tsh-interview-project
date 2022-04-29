@@ -280,3 +280,32 @@
     }
   }
 }
+
+//Checkbox styling
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+input[type="checkbox"]+label:before {
+  content: '';
+  background-color: $white;
+  border: 1px solid $gray-2;
+  border-radius: 0.25rem;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  vertical-align: -0.5rem;
+}
+
+input[type="checkbox"]:checked+label:before {
+  background-image: url('../assets/icons/Tick.svg');
+  background-size: 45%;
+  fill: $white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $blue-1;
+}
