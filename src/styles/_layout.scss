@@ -12,10 +12,34 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 3.25rem 1.5rem 2rem;
-    row-gap: 1.5rem;
+    gap: 1rem;
+
+    @include large {
+      padding: 3.25rem 6.75rem 2rem;
+      flex-wrap: nowrap;
+    }
+
+    .account {
+      @include large {
+        order: 5;
+        margin-left: auto;
+      }
+    }
+
+    .logo {
+      @include large {
+        margin-right: auto;
+      }
+    }
 
     .searchBox {
       flex: 0 0 100%;
+
+      @include large {
+        flex: 0 1 auto;
+        max-width: 24.5rem;
+        width: 100%;
+      }
     } //.searchBox
 
     .filters {
