@@ -168,31 +168,5 @@
   } //.product__text
 } //.product
 
-.pagination {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
 
-  .pagination__link {
-    cursor: pointer;
-    text-decoration: none;
-
-    &.pagination__link--active {
-      color: $blue-1;
-    }
-
-    &.pagination__link--disabled, &[disabled] {
-      color: $gray-4;
-      cursor: default;
-    }
-  }
-
-  .pagination__digits {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-  }
-}
 
