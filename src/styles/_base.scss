@@ -19,24 +19,16 @@ $small-width: 480px;
 $medium-width: 768px;
 $large-width: 1024px;
 
-@mixin extra-small {
-  @media (max-width: #{$small-width - 1px}) {
-    @content;
-  }
-}
-
 @mixin small {
-  @media (min-width: #{$small-width}) {
+  @media (min-width: #{$small-width}) and (max-width: #{$medium-width - 1px}) {
     @content;
   }
 }
-
 @mixin medium {
-  @media (min-width: #{$medium-width}) {
+  @media (min-width: #{$medium-width}) and (max-width: #{$large-width - 1px}) {
     @content;
   }
 }
-
 @mixin large {
   @media (min-width: #{$large-width}) {
     @content;
