@@ -4,7 +4,7 @@ import {Product} from "./Product";
 import {Empty} from "./Empty";
 import {fetchData} from "../../utilities/api";
 import {Pagination} from "./Pagination";
-import {Modal} from "./Modal";
+import {Products_list} from "./Products_list";
 
 export const Products = () => {
     const [error, setError] = useState(null);
@@ -30,57 +30,18 @@ export const Products = () => {
         fetchData(setLoaded, setProducts, setError, parameters);
     }, [searchQuery, activeCheck, promoCheck, currentPage])
 
-    if (error) {
-        return (
-            <>
-                <Header
-                    setSearchQuery={setSearchQuery}
-                    setActiveCheck={setActiveCheck}
-                    setPromoCheck={setPromoCheck}
-                    activeCheck={activeCheck}
-                    promoCheck={promoCheck}
-                    setCurrentPage={setCurrentPage}
-                />
-                <div>Error</div>
-            </>
-        )
-    } else if (!isLoaded || products.length===0) {
-        return (
-            <>
-                <Header
-                    setSearchQuery={setSearchQuery}
-                    setActiveCheck={setActiveCheck}
-                    setPromoCheck={setPromoCheck}
-                    activeCheck={activeCheck}
-                    promoCheck={promoCheck}
-                    setCurrentPage={setCurrentPage}
-                />
-                <div>Loading</div>
-            </>
-        )
-    } else {
-        return (
-            <>
-                <Header
-                    setSearchQuery={setSearchQuery}
-                    setActiveCheck={setActiveCheck}
-                    setPromoCheck={setPromoCheck}
-                    activeCheck={activeCheck}
-                    promoCheck={promoCheck}
-                    setCurrentPage={setCurrentPage}
-                />
-                <section className="products">
-                    <div className="products__wrapper">
-                        <div className="products__list">
-                            {products.meta.totalItems===0 ? <Empty/> : products.items.map(item => <Product key={item.id} item={item}/>)}
-                        </div>
-                        <div className="products__pages">
-                           <Pagination metaData={products.meta} setCurrentPage={setCurrentPage}/>
-                        </div>
-                    </div>
-                </section>
-            </>
-        );
-    }
+    return (
+        <>
+            <Header
+                setSearchQuery={setSearchQuery}
+                setActiveCheck={setActiveCheck}
+                setPromoCheck={setPromoCheck}
+                activeCheck={activeCheck}
+                promoCheck={promoCheck}
+                setCurrentPage={setCurrentPage}
+            />
+            {(error || !isLoaded || products.length===0) ? <div>Loading...</div> : <Products_list products={products} setCurrentPage={setCurrentPage}/>}
+        </>
+    );
 
 };
