@@ -1,8 +1,8 @@
 import {Pagination} from "./Pagination";
 import {Product} from "./Product";
+import {Empty} from "./Empty";
 
 export const Products_list = ({products, setCurrentPage}) => {
-
 
     return (
         <section className="products">

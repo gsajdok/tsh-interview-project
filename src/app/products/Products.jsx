@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Header} from "./Header";
-import {Product} from "./Product";
-import {Empty} from "./Empty";
 import {fetchData} from "../../utilities/api";
-import {Pagination} from "./Pagination";
 import {Products_list} from "./Products_list";
 
 export const Products = () => {
