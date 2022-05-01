@@ -1,0 +1,26 @@
+.spinner {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 0.25rem solid $gray-2;
+  border-radius: 50%;
+
+  &:after {
+    position: absolute;
+    top: -0.25rem;
+    left: -0.25rem;
+    display: block;
+    content: '';
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 0.25rem solid;
+    border-radius: 50%;
+    border-color: $blue-1 transparent transparent transparent;
+    animation: rotate360 linear 1s infinite;
+  }
+}
+
+@keyframes rotate360 {
+  from{transform: rotate(0deg)}
+  to{transform: rotate(360deg)}
+}

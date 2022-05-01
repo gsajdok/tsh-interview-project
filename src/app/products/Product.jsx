@@ -2,9 +2,11 @@ import React, {useState} from "react";
 import {ReactComponent as Star} from '../../assets/icons/Star.svg';
 import {ReactComponent as StarEmpty} from '../../assets/icons/StarEmpty.svg';
 import {Modal} from "./Modal";
+import {Loading} from "./Loading";
 
 export const Product = ({item}) => {
     const [showModal, setShowModal] = useState(false);
+    const [imgLoaded, setImgLoaded] = useState(false);
 
     const handleOnClick = (e) => {
         if(!e.target.hasAttribute('disabled')) {
@@ -13,12 +15,23 @@ export const Product = ({item}) => {
         }
     }
 
+    const handleOnLoad = () => {
+        setImgLoaded(true);
+    }
+
     return (
         <>
             {showModal && <Modal item={item} setShowModal={setShowModal}/>}
             <div className="product">
                 <div className="product__image">
-                    <img src={item.image} alt={item.name} className={`${!item.active && "product__image--disabled"}`}/>
+                    <img
+                        src={item.image}
+                        alt={item.name}
+                        className={`${!item.active && "product__image--disabled"}`}
+                        onLoad={handleOnLoad}
+                    />
+                        {!imgLoaded && <div className="image__loading"><Loading/></div>}
+
                     {item.promo && <div className="product__image__promo"><span>Promo</span></div>}
                 </div>
                 <div className="product__text">

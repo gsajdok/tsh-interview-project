@@ -1,3 +1,8 @@
+@keyframes fadeIn {
+  from{opacity: 0}
+  to{opacity: 1}
+}
+
 .product {
   display: flex;
   flex-direction: column;
@@ -6,6 +11,15 @@
   background-color: $white;
   border-radius: 0.5rem;
   overflow: hidden;
+  opacity: 0;
+
+  animation: fadeIn 0.2s ease-in-out;
+  animation-fill-mode: forwards;
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}n) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
 
   &.product--empty {
     max-width: 37.5rem;
@@ -19,6 +33,17 @@
     height: 40%;
     position: relative;
     overflow: hidden;
+
+    .image__loading {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
 
     img {
       width: 100%;

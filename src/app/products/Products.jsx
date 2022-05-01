@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Header} from "./Header";
 import {fetchData} from "../../utilities/api";
 import {Products_list} from "./Products_list";
+import {Loading} from "./Loading";
 
 export const Products = () => {
     const [error, setError] = useState(null);
@@ -37,7 +38,11 @@ export const Products = () => {
                 promoCheck={promoCheck}
                 setCurrentPage={setCurrentPage}
             />
-            {(error || !isLoaded || products.length===0) ? <div>Loading...</div> : <Products_list products={products} setCurrentPage={setCurrentPage}/>}
+            <section className="products">
+                <div className="products__wrapper">
+                    {(error || !isLoaded || products.length===0) ? <Loading/> : <Products_list products={products} setCurrentPage={setCurrentPage}/>}
+                </div>
+            </section>
         </>
     );
 
