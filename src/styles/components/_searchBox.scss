@@ -1,0 +1,26 @@
+.searchBox {
+  position: relative;
+
+  .searchInput {
+    background-color: $white;
+    border: 1px solid $gray-2;
+    border-radius: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    height: 3rem;
+    padding: 0 3rem 0 1rem;
+  }
+
+  .searchInput__button {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
