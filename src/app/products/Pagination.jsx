@@ -29,8 +29,12 @@ export const Pagination = ({metaData, setCurrentPage}) => {
     // const pagesArray = new Array(metaData.totalPages).fill(0);
 
     const handleOnClick = (e) => {
-        if(e.target.dataset.disabled!=='true') setCurrentPage(e.target.dataset.page);
-        console.log(leftPages);
+        if(e.target.dataset.disabled!=='true') {
+            if(parseInt(e.target.dataset.page)>0 && parseInt(e.target.dataset.page)<=metaData.totalPages) {
+                setCurrentPage(e.target.dataset.page);
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        }
     }
 
     if(metaData.totalItems===0) {
@@ -53,7 +57,7 @@ export const Pagination = ({metaData, setCurrentPage}) => {
                             className={`${e === metaData.currentPage ? "pagination__link pagination__link--active" : "pagination__link"}`}
                         >{e}</a>
                     ))}
-                    {showSpacer && <span>...</span>}
+                    {showSpacer && <span className="pagination__spacer">...</span>}
                     {rightPages.map(e => (
                         <a
                             key={e}

@@ -24,7 +24,7 @@ export const Header = ({setSearchQuery, setActiveCheck, setPromoCheck, activeChe
     return (
         <header>
         <div className="header__wrapper">
-            <div className="logo"><h1 className="logo">join.tsh.io</h1></div>
+            <div className="logo"><h1 className="logo"><Link to={AppRoute.home}>join.tsh.io</Link></h1></div>
             <div className="account">
                 <Link to={AppRoute.login} className="button button--empty">Log in</Link>
             </div>
