@@ -11,7 +11,7 @@ export const Modal = ({item, setShowModal}) => {
             <div className="modal__wrapper">
                 <div className="modal__window">
                     <div className="modal__close">
-                        <button onClick={handleOnClick} className="modal__close__button"><Cross/></button>
+                        <button data-testid="modalCloseButton" onClick={handleOnClick} className="modal__close__button"><Cross/></button>
                     </div>
                     <div className="modal__window__image">
                         <img src={item.image} alt={item.name} className=""/>
