@@ -30,8 +30,10 @@ export const Pagination = ({metaData, setCurrentPage}) => {
 
     const handleOnClick = (e) => {
         if(e.target.dataset.disabled!=='true') {
-            setCurrentPage(e.target.dataset.page);
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            if(parseInt(e.target.dataset.page)>0 && parseInt(e.target.dataset.page)<=metaData.totalPages) {
+                setCurrentPage(e.target.dataset.page);
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
         }
     }
 
