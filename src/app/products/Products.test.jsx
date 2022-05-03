@@ -1,9 +1,3 @@
-//correct API requests
-//shows loading if no api response
-//shows loading if empty response
-//shows empty page if no products
-//shows pages if there are products
-
 import React from 'react';
 import { render } from '../../tests';
 import {Products} from './Products';

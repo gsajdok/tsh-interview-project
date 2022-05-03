@@ -1,6 +1,5 @@
 export const fetchData = (setLoaded, setItems, setError, parameters) => {
-    let fetchLink = "https://join-tsh-api-staging.herokuapp.com/products?" + Object.entries(parameters).map(element => element.join("=")).join("&");
-    //TODO: env
+    let fetchLink = process.env.REACT_APP_API_URL + "?" + Object.entries(parameters).map(element => element.join("=")).join("&");
 
     fetch(fetchLink)
         .then(res => res.json())
