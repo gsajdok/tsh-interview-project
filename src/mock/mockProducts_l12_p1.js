@@ -5,7 +5,7 @@ export const PRODUCTSL12P1 = {
         "name": "Incredible Plastic Pizza",
         "description": "Molestiae iure eum voluptas culpa et ut quasi.",
         "rating": 2,
-        "image": "https://picsum.photos/640/480?random=1074",
+        "image": "./mock/productImage.jpg",
         "promo": true,
         "active": true
     },
@@ -14,7 +14,7 @@ export const PRODUCTSL12P1 = {
         "name": "Licensed Cotton Soap",
         "description": "Commodi repellat illo facilis.",
         "rating": 2,
-        "image": "https://picsum.photos/640/480?random=5623",
+        "image": "./mock/productImage.jpg",
         "promo": true,
         "active": false
     },
@@ -23,7 +23,7 @@ export const PRODUCTSL12P1 = {
         "name": "Tasty Rubber Car",
         "description": "Explicabo accusamus optio facilis nobis officiis sed nisi omnis quia.",
         "rating": 5,
-        "image": "https://picsum.photos/640/480?random=2281",
+        "image": "./mock/productImage.jpg",
         "promo": true,
         "active": true
     },
@@ -32,7 +32,7 @@ export const PRODUCTSL12P1 = {
         "name": "Generic Metal Shirt",
         "description": "Molestias atque repudiandae hic consequuntur voluptatem repellat magni.",
         "rating": 4,
-        "image": "https://picsum.photos/640/480?random=1573",
+        "image": "./mock/productImage.jpg",
         "promo": false,
         "active": false
     },
@@ -41,7 +41,7 @@ export const PRODUCTSL12P1 = {
         "name": "Fantastic Fresh Ball",
         "description": "Aliquam delectus sapiente est cumque odio veniam reiciendis voluptatem distinctio.",
         "rating": 1,
-        "image": "https://picsum.photos/640/480?random=5147",
+        "image": "./mock/productImage.jpg",
         "promo": true,
         "active": true
     },
@@ -50,7 +50,7 @@ export const PRODUCTSL12P1 = {
         "name": "Awesome Fresh Gloves",
         "description": "Ut dicta et minima.",
         "rating": 1,
-        "image": "https://picsum.photos/640/480?random=7135",
+        "image": "./mock/productImage.jpg",
         "promo": true,
         "active": false
     },
@@ -59,7 +59,7 @@ export const PRODUCTSL12P1 = {
         "name": "Unbranded Concrete Sausages",
         "description": "Voluptatibus maxime odit fugit quo qui maxime.",
         "rating": 1,
-        "image": "https://picsum.photos/640/480?random=2664",
+        "image": "./mock/productImage.jpg",
         "promo": true,
         "active": false
     },
@@ -68,7 +68,7 @@ export const PRODUCTSL12P1 = {
         "name": "Small Wooden Gloves",
         "description": "At facere non nisi autem.",
         "rating": 1,
-        "image": "https://picsum.photos/640/480?random=3559",
+        "image": "./mock/productImage.jpg",
         "promo": false,
         "active": true
     },
@@ -77,7 +77,7 @@ export const PRODUCTSL12P1 = {
         "name": "Practical Concrete Mouse",
         "description": "Nulla dolor et at cumque perferendis dignissimos omnis.",
         "rating": 3,
-        "image": "https://picsum.photos/640/480?random=3772",
+        "image": "./mock/productImage.jpg",
         "promo": false,
         "active": true
     },
@@ -86,7 +86,7 @@ export const PRODUCTSL12P1 = {
         "name": "Licensed Plastic Bike",
         "description": "Delectus asperiores debitis culpa.",
         "rating": 4,
-        "image": "https://picsum.photos/640/480?random=8090",
+        "image": "./mock/productImage.jpg",
         "promo": false,
         "active": false
     },
@@ -95,7 +95,7 @@ export const PRODUCTSL12P1 = {
         "name": "Unbranded Fresh Salad",
         "description": "Aut nihil nemo rerum et.",
         "rating": 1,
-        "image": "https://picsum.photos/640/480?random=7237",
+        "image": "./mock/productImage.jpg",
         "promo": false,
         "active": true
     },
@@ -104,7 +104,7 @@ export const PRODUCTSL12P1 = {
         "name": "Refined Metal Fish",
         "description": "Voluptas atque sit aut ea ea.",
         "rating": 3,
-        "image": "https://picsum.photos/640/480?random=1251",
+        "image": "./mock/productImage.jpg",
         "promo": true,
         "active": false
     }
@@ -116,10 +116,4 @@ export const PRODUCTSL12P1 = {
         "totalPages": 9,
         "currentPage": 1
 },
-    "links": {
-    "first": "https://join-tsh-api-staging.herokuapp.com/products?limit=12",
-        "previous": "",
-        "next": "https://join-tsh-api-staging.herokuapp.com/products?page=2&limit=12",
-        "last": "https://join-tsh-api-staging.herokuapp.com/products?page=9&limit=12"
-}
 }
