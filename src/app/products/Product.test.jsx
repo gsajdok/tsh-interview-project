@@ -1,14 +1,8 @@
 import React from 'react';
 
 import { render } from '../../tests';
-import {cleanup, fireEvent} from '@testing-library/react';
+import {fireEvent} from '@testing-library/react';
 import {Product} from "./Product";
-
-//Renders
-//Renders its components
-//Is disabled when disabled
-//has Promo when promoted
-//amount of stars works
 
 import {NORMALPRODUCT, DISABLEDPRODUCT, PROMOPRODUCT} from "../../mock/mockProduct";
 
