@@ -1,0 +1,125 @@
+{
+  "items": [
+    {
+      "id": 25,
+      "name": "Handmade Plastic Sausages",
+      "description": "Exercitationem nisi sit exercitationem accusamus ab accusantium.",
+      "rating": 4,
+      "image": "",
+      "promo": true,
+      "active": false
+    },
+    {
+      "id": 26,
+      "name": "Ergonomic Fresh Sausages",
+      "description": "Fuga voluptates molestiae accusamus ea accusantium eos necessitatibus.",
+      "rating": 3,
+      "image": "",
+      "promo": true,
+      "active": false
+    },
+    {
+      "id": 27,
+      "name": "Generic Soft Chicken",
+      "description": "Ea consequatur sit cupiditate nisi.",
+      "rating": 3,
+      "image": "",
+      "promo": false,
+      "active": true
+    },
+    {
+      "id": 28,
+      "name": "Practical Fresh Shoes",
+      "description": "Nostrum facilis odit est ut itaque esse eius voluptas in.",
+      "rating": 5,
+      "image": "",
+      "promo": false,
+      "active": true
+    },
+    {
+      "id": 29,
+      "name": "Gorgeous Frozen Fish",
+      "description": "Culpa itaque et dolor consequatur corrupti.",
+      "rating": 5,
+      "image": "",
+      "promo": false,
+      "active": true
+    },
+    {
+      "id": 30,
+      "name": "Tasty Wooden Mouse",
+      "description": "Ex omnis ut optio ipsam eveniet.",
+      "rating": 5,
+      "image": "",
+      "promo": true,
+      "active": false
+    },
+    {
+      "id": 31,
+      "name": "Rustic Plastic Pants",
+      "description": "Inventore odit aut hic rerum rerum quia sed voluptas.",
+      "rating": 4,
+      "image": "",
+      "promo": true,
+      "active": true
+    },
+    {
+      "id": 32,
+      "name": "Fantastic Concrete Soap",
+      "description": "Fuga facere voluptates consequatur eius eveniet illo.",
+      "rating": 1,
+      "image": "",
+      "promo": false,
+      "active": true
+    },
+    {
+      "id": 33,
+      "name": "Generic Fresh Shirt",
+      "description": "Consequatur saepe aliquid et in.",
+      "rating": 2,
+      "image": "",
+      "promo": false,
+      "active": true
+    },
+    {
+      "id": 34,
+      "name": "Sleek Fresh Bacon",
+      "description": "Minima et culpa illum itaque et beatae quia quo.",
+      "rating": 3,
+      "image": "",
+      "promo": false,
+      "active": false
+    },
+    {
+      "id": 35,
+      "name": "Unbranded Frozen Hat",
+      "description": "Blanditiis rerum exercitationem dicta minima vitae tempore qui vel tenetur.",
+      "rating": 5,
+      "image": "",
+      "promo": false,
+      "active": false
+    },
+    {
+      "id": 36,
+      "name": "Handcrafted Cotton Mouse",
+      "description": "Nulla voluptates beatae eius accusantium iusto quod.",
+      "rating": 5,
+      "image": "",
+      "promo": false,
+      "active": true
+    }
+  ],
+  "meta": {
+    "totalItems": 100,
+    "itemCount": 12,
+    "itemsPerPage": 12,
+    "totalPages": 9,
+    "currentPage": 3
+  },
+  "links": {
+    "first": "",
+    "previous": "",
+    "next": "",
+    "last": ""
+  }
+}

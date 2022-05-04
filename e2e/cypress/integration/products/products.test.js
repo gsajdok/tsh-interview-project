@@ -1,40 +1,40 @@
-import { NavigationMenu } from '../../pages/Navigation';
+import {NavigationMenu} from '../../pages/Navigation';
 
-//Users flow:
-//Open the page
-//move to page 5
-//Search for something
-//Select promo
-//click on a disabled item
-//select active
-//click on an item
-//close the modal window
+const interceptAndStubWithFile = (fileName) => {
+    cy.intercept(
+        {
+            method: 'GET', // Route all GET requests
+        },
+        { fixture: fileName }
+    ).as('interceptAndStub');
+}
 
-//using real database
 context('Simple page usage', () => {
     before(() => {
         cy.clearSession();
         cy.visit(Cypress.env().baseUrl);
-    })
+        interceptAndStubWithFile('limit_12_page_1.json');
+        cy.wait('@interceptAndStub')
+    });
+
     context('User opens the page', () => {
+
         it('page matches the home link', () => {
             cy.location().should(loc => {
                 expect(loc.href).to.eq(NavigationMenu.homeLink);
             });
         });
-
         it('page shows the header', () => {
             cy.get('header').should('exist');
         })
-
         it('page shows the product list', () => {
             cy.get('.products').should('exist');
         })
-
         it('page shows the pagination', () => {
             cy.get('.pagination').should('exist');
         })
     })
+
     context('User goes to the 5th page', () => {
         it('pagination exists and is populated', () => {
             cy.get('.pagination .pagination__digits').find('a').should('have.length', 6)
@@ -43,17 +43,21 @@ context('Simple page usage', () => {
             cy.get('.pagination .pagination__digits .pagination__link[data-page="5"]').should('not.exist');
         })
         it('clicks on page 3', () => {
+            interceptAndStubWithFile('limit_12_page_3.json');
             cy.get('.pagination .pagination__digits .pagination__link[data-page="3"]').click();
         })
         it('clicks on page 4', () => {
+            interceptAndStubWithFile('limit_12_page_4.json');
             cy.get('.pagination .pagination__digits .pagination__link[data-page="4"]').click();
         })
         it('clicks on page 5', () => {
+            interceptAndStubWithFile('limit_12_page_5.json');
             cy.get('.pagination .pagination__digits .pagination__link[data-page="5"]').click();
         })
     })
 
     context('User searches for chairs', () => {
+
         it('writes chair in the search input', () => {
             cy.get('#searchInput').click().type('Chair');
             cy.get('#searchInput').should(($input) => {
@@ -62,6 +66,7 @@ context('Simple page usage', () => {
             })
         });
         it('finds and clicks the search button', () => {
+            interceptAndStubWithFile('limit_12_page_1_search_Chair.json');
             cy.get('label.searchInput__button').should('be.visible').click();
         });
         it('only shows chairs', () => {
@@ -76,6 +81,7 @@ context('Simple page usage', () => {
 
     context('User enables promo', () => {
         it('presses the promo tag', () => {
+            interceptAndStubWithFile('limit_12_page_1_search_Chair_promo_true.json');
             cy.get('#checkbox__promo+label').should('be.visible').click();
         })
         it('only shows promos', () => {
@@ -84,6 +90,10 @@ context('Simple page usage', () => {
         })
     });
     context('User clicks a link', () => {
+        before(() => {
+            interceptAndStubWithFile('limit_12_page_1_search_Chair_promo_true.json');
+        })
+
         it('presses the button', () => {
             cy.get('.products .products__list .product .product__details a:not([disabled])').first().should('be.visible').click();
         })
@@ -102,49 +112,3 @@ context('Simple page usage', () => {
         })
     })
 })
-
-
-
-
-
-
-//
-// context('If nothing is received from the API,', () => {
-//   before(() => {
-//     cy.intercept(
-//         {
-//           method: 'GET',
-//           url: 'https://join-tsh-api-staging.herokuapp.com/*',
-//         },
-//         []
-//     ).as('fetchData');
-//     cy.visit(Cypress.env().baseUrl);
-//   })
-//
-//   it('should show the header', () => {
-//     cy.get('header').should('exist');
-//   })
-//
-//   it('should show the loading bar', () => {
-//     cy.get('.products .spinner').should('exist');
-//   })
-// })
-//
-// context('Search function', () => {
-//   before(() => {
-//     cy.visit(Cypress.env().baseUrl);
-//   })
-//
-//   it('should be visible by the user', () => {
-//     cy.get('#searchInput').should('be.visible');
-//     cy.get('label.searchInput__button').should('exist');
-//   })
-//
-//   it('should search and return products with matching names', () => {
-//     cy.get('input.searchInput').type('Refined');
-//     cy.get('.searchBox form').submit();
-//     cy.get('.products__list').should('be.visible');
-//     cy.get('.products__list').get('.product__title').get('h2:contains(Refined)').should
-//   })
-//
-// })

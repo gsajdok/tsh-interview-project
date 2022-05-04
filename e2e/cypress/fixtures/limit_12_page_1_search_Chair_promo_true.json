@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "id": 15,
+      "name": "Refined Frozen Chair",
+      "description": "Expedita quisquam molestias.",
+      "rating": 3,
+      "image": "",
+      "promo": true,
+      "active": true
+    },
+    {
+      "id": 84,
+      "name": "Gorgeous Rubber Chair",
+      "description": "Qui animi sed itaque sint.",
+      "rating": 5,
+      "image": "",
+      "promo": true,
+      "active": false
+    },
+    {
+      "id": 92,
+      "name": "Handmade Granite Chair",
+      "description": "Reiciendis incidunt numquam incidunt.",
+      "rating": 3,
+      "image": "",
+      "promo": true,
+      "active": false
+    }
+  ],
+  "meta": {
+    "totalItems": 3,
+    "itemCount": 3,
+    "itemsPerPage": 12,
+    "totalPages": 1,
+    "currentPage": 1
+  },
+  "links": {
+    "first": "",
+    "previous": "",
+    "next": "",
+    "last": ""
+  }
+}
