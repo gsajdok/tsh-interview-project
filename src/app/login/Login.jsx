@@ -15,18 +15,18 @@ export const Login = () => {
     }
 
   return (
-      <div className="loginPage__wrapper">
+      <div className="loginPage">
           <div className="loginPage__image">
               <img src={loginPicture} alt="login picture"/>
           </div>
-          <div className="loginPage__form">
+          <div className="loginPage__content">
               <header>
                   <div className="header__wrapper">
                       <div className="logo"><h1 className="logo"><Link to={AppRoute.home}>join.tsh.io</Link></h1></div>
                   </div>
               </header>
-              <div className="login">
-                  <div className="login__wrapper">
+              <div className="login__wrapper">
+                  <div className="login__wrapper__two">
                       <div className="login__box">
                           <div className="login__title">
                               <h2>Login</h2>
