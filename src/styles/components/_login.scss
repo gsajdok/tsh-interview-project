@@ -1,14 +1,14 @@
-.loginPage__wrapper {
-  height: 100vh;
+.loginPage {
   display: flex;
   flex-direction: row;
-
+  height: 100vh;
 }
 
 .loginPage__image {
+  display: none;
   max-width: 40rem;
   overflow: hidden;
-  display: none;
+
   @include large() {
     display: block;
   }
@@ -19,7 +19,7 @@
   }
 }
 
-.loginPage__form {
+.loginPage__content {
   display: block;
   flex-grow: 1;
 
@@ -37,7 +37,7 @@
   }
 }
 
-.login {
+.login__wrapper {
   flex-basis: 100%;
   align-self: flex-start;
   display: flex;
@@ -49,20 +49,27 @@
   width: 100%;
 
   @include medium() {
-    align-self: center;
+    justify-content: center;
   }
 
   @include large() {
     padding: 3.25rem 6.75rem 2rem;
   }
 
-  .login__wrapper {
+  .login__wrapper__two {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 100%;
     max-width: 39rem;
+    width: 100%;
+
+    @include large() {
+      width: 100%;
+    }
+    @include medium() {
+      width: auto;
+    }
 
     .login__box {
       @include large() {
@@ -93,8 +100,9 @@
         }
 
         label {
-
           width: 100%;
+          position: relative;
+
           input[type="password"], input[type="text"] {
             box-sizing: border-box;
             display: block;
@@ -116,6 +124,7 @@
 
         .login__button {
           width: 100%;
+          margin: 1rem 0;
 
           input[type="submit"] {
             width: 100%;
@@ -123,7 +132,6 @@
         }
       }
     }
-
 
     .login__link {
       font-size: 0.875rem;
@@ -135,6 +143,16 @@
         font-weight: 600;
       }
     }
-
   }
+}
+
+.error {
+  color: red;
+  position: absolute;
+  background-color: $white;
+  padding: 0 0.5rem;
+  bottom: 1rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
 }

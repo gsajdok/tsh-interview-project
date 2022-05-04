@@ -6,6 +6,7 @@ export const Pagination = ({metaData, setCurrentPage}) => {
     const [rightPages, setRightPages] = useState([]);
 
     useEffect(() => {
+
         if(metaData.totalPages<=6) {
             setLeftPages(new Array(metaData.totalPages).fill(0).map((e, i) => i+1));
             setRightPages([]);
@@ -25,8 +26,6 @@ export const Pagination = ({metaData, setCurrentPage}) => {
         }
 
     }, [metaData])
-
-    // const pagesArray = new Array(metaData.totalPages).fill(0);
 
     const handleOnClick = (e) => {
         if(e.target.dataset.disabled!=='true') {
