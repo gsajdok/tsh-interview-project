@@ -1,17 +1,37 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-
-
 import { AppRoute } from '../../routing/AppRoute.enum';
 
 import loginPicture from '../../assets/images/loginPicture.png'
 
+const ErrorMessage = ({message = 'no message', show = false}) =>
+    show && (
+        <div className="error">{message}</div>
+    );
+
 export const Login = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMessages, setErrorMessages] = useState({});
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(password.length<6) {setErrorMessages(prevState => ({...prevState, pass: {short: true}}))}
+        if(name.length<5) {setErrorMessages(prevState => ({...prevState, name: {short: true}}))}
+        if(name.length>15) {setErrorMessages(prevState => ({...prevState, name: {long: true}}))}
+    }
+
+    const handleOnChange = (e) => {
+        if(e.target.name==="username") {
+            setName(e.target.value)
+            setErrorMessages(prevValue => ({...prevValue, name: {}}));
+        }
+        if(e.target.name==="password") {
+            setPassword(e.target.value)
+            setErrorMessages(prevValue => ({...prevValue, pass: {}}));
+        }
+
     }
 
   return (
@@ -40,8 +60,12 @@ export const Login = () => {
                                           value={name}
                                           placeholder="Enter username"
                                           name="username"
-                                          onChange={e => setName(e.target.value)}
+                                          onChange={handleOnChange}
                                       />
+                                      {errorMessages.name?.long  &&
+                                      <ErrorMessage message="Username too long" show="true"/>}
+                                      {errorMessages.name?.short &&
+                                      <ErrorMessage message="Username too short" show="true"/>}
                                   </label>
                                   <label>
                                       <h3>Password</h3>
@@ -50,8 +74,10 @@ export const Login = () => {
                                           value={password}
                                           placeholder="Enter password"
                                           name="password"
-                                          onChange={e => setPassword(e.target.value)}
+                                          onChange={handleOnChange}
                                       />
+                                      {errorMessages.pass?.short &&
+                                      <ErrorMessage message="Password too short" show="true"/>}
                                   </label>
                                   <div className="login__button">
                                       <input type="submit" value="Submit" className="button button--filled"/>

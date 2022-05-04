@@ -101,6 +101,7 @@
 
         label {
           width: 100%;
+          position: relative;
 
           input[type="password"], input[type="text"] {
             box-sizing: border-box;
@@ -123,6 +124,7 @@
 
         .login__button {
           width: 100%;
+          margin: 1rem 0;
 
           input[type="submit"] {
             width: 100%;
@@ -130,7 +132,6 @@
         }
       }
     }
-
 
     .login__link {
       font-size: 0.875rem;
@@ -142,6 +143,16 @@
         font-weight: 600;
       }
     }
-
   }
+}
+
+.error {
+  color: red;
+  position: absolute;
+  background-color: $white;
+  padding: 0 0.5rem;
+  bottom: 1rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
 }
