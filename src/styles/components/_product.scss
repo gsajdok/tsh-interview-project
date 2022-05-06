@@ -16,12 +16,11 @@
   animation: fadeIn 0.2s ease-in-out;
   animation-fill-mode: forwards;
 
-  &.product--empty {
-    max-width: 37.5rem;
-  }
-
   @include large {
     width: 18rem;
+    &.product--empty {
+      width: 37.5rem;
+    }
   }
 
   .product__image {
