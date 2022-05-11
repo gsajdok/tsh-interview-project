@@ -26,6 +26,7 @@ input[type="checkbox"]+label:before {
   transition: background-color ease-in-out 0.2s;
 }
 
+
 input[type="checkbox"]:checked+label:before {
   background-image: url('../../assets/icons/Tick.svg');
   background-size: 45%;
@@ -36,4 +37,8 @@ input[type="checkbox"]:checked+label:before {
 
 input[type="checkbox"]+label {
   user-select: none;
+}
+
+input[type="checkbox"][disabled]+label:before {
+  background-color: $gray-2;
 }

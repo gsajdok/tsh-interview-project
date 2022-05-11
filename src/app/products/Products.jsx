@@ -23,6 +23,7 @@ export const Products = () => {
         if(!promoCheck) { delete parameters["promo"] }
         if(!activeCheck) { delete parameters["active"] }
         if(searchQuery==="") { delete parameters["search"] }
+        setLoaded(false);
         fetchData(setLoaded, setProducts, setError, parameters);
     }, [searchQuery, activeCheck, promoCheck, currentPage])
 
@@ -35,6 +36,7 @@ export const Products = () => {
                 activeCheck={activeCheck}
                 promoCheck={promoCheck}
                 setCurrentPage={setCurrentPage}
+                isLoaded={isLoaded}
             />
             <section className="products">
                 <div className="products__wrapper">

@@ -1,6 +1,9 @@
 body {
   background-color: $gray-1;
   height: 100vh;
+  & > #root > *{
+    padding-left: calc(100vw - 100%);
+  }
 }
 
 header {

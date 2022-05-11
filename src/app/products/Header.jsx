@@ -2,8 +2,9 @@ import {Link} from "react-router-dom";
 import {AppRoute} from "../../routing/AppRoute.enum";
 import React, {useState} from "react";
 import {ReactComponent as Lens} from '../../assets/icons/Lens.svg'
+import {Loading} from "./Loading";
 
-export const Header = ({setSearchQuery, setActiveCheck, setPromoCheck, activeCheck, promoCheck, setCurrentPage}) => {
+export const Header = ({isLoaded, setSearchQuery, setActiveCheck, setPromoCheck, activeCheck, promoCheck, setCurrentPage}) => {
     const [searchInput, setSearchInput] = useState("");
 
     const handleSubmit = (e) => {
@@ -31,17 +32,19 @@ export const Header = ({setSearchQuery, setActiveCheck, setPromoCheck, activeChe
                 <div className="searchBox">
                     <form onSubmit={handleSubmit}>
                         <input type="text" id="searchInput" className="searchInput" placeholder="Search" value={searchInput} onChange={e => setSearchInput(e.target.value)}/>
-                        <input type="submit" id="submit__searchQuery" style={{display: "none"}}/>
-                        <label className="searchInput__button" htmlFor="submit__searchQuery"><Lens/></label>
+                        <input disabled={!isLoaded} type="submit" id="submit__searchQuery" style={{display: "none"}}/>
+                        <label className="searchInput__button" htmlFor="submit__searchQuery">
+                            {isLoaded ? <Lens/> : <Loading type={"searchBar"}/>}
+                        </label>
                     </form>
                 </div>
                 <div className="filters">
                     <div className="filters__checkbox__active">
-                            <input type="checkbox" name="checkbox__active" id="checkbox__active" checked={activeCheck || false} onChange={handleCheckboxOnChange}/>
+                            <input disabled={!isLoaded} type="checkbox" name="checkbox__active" id="checkbox__active" checked={activeCheck || false} onChange={handleCheckboxOnChange}/>
                             <label htmlFor="checkbox__active">Active</label>
                     </div>
                     <div className="filters__checkbox__promo">
-                        <input type="checkbox" name="checkbox__promo" id="checkbox__promo" checked={promoCheck || false} onChange={handleCheckboxOnChange}/>
+                        <input disabled={!isLoaded} type="checkbox" name="checkbox__promo" id="checkbox__promo" checked={promoCheck || false} onChange={handleCheckboxOnChange}/>
                         <label htmlFor="checkbox__promo">Promo</label>
                     </div>
                 </div>
