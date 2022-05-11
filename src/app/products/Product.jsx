@@ -1,12 +1,26 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {ReactComponent as Star} from '../../assets/icons/Star.svg';
 import {ReactComponent as StarEmpty} from '../../assets/icons/StarEmpty.svg';
 import {Modal} from "./Modal";
 import {Loading} from "./Loading";
 
+const useGenerateColor = () => {
+    const [color, setColor] = useState('');
+    const generateColor = () => {
+        setColor(Math.floor(Math.random()*16777215).toString(16))
+    };
+    return [color, generateColor];
+}
+
 export const Product = ({item}) => {
     const [showModal, setShowModal] = useState(false);
     const [imgLoaded, setImgLoaded] = useState(false);
+    const [color, generateColor] = useGenerateColor(false)
+    const [showLoadingOverlay, setLoadingOverlay] = useState(true);
+
+    useEffect(() => {
+        generateColor();
+    }, [])
 
     const handleOnClick = (e) => {
         if(!e.target.hasAttribute('disabled')) {
@@ -17,6 +31,10 @@ export const Product = ({item}) => {
 
     const handleOnLoad = () => {
         setImgLoaded(true);
+    }
+
+    const handleOnTransition = () => {
+       setLoadingOverlay(false)
     }
 
     return (
@@ -30,8 +48,7 @@ export const Product = ({item}) => {
                         className={`${!item.active && "product__image--disabled"}`}
                         onLoad={handleOnLoad}
                     />
-                        {!imgLoaded && <div className="image__loading"><Loading/></div>}
-
+                    {showLoadingOverlay && <div onTransitionEnd={handleOnTransition} style={{backgroundColor: `#${color}`}} className={`${imgLoaded && "product__image__loadingOverlay--disappear"} product__image__loadingOverlay`}/>}
                     {item.promo && <div className="product__image__promo"><span>Promo</span></div>}
                 </div>
                 <div className="product__text">

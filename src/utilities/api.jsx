@@ -1,5 +1,5 @@
 export const fetchData = (setLoaded, setItems, setError, parameters) => {
-    let fetchLink = process.env.REACT_APP_API_URL + "?" + Object.entries(parameters).map(element => element.join("=")).join("&");
+    let fetchLink = process.env.REACT_APP_API_URL + "/products?" + Object.entries(parameters).map(element => element.join("=")).join("&");
 
     fetch(fetchLink)
         .then(res => res.json())
